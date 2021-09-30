@@ -6,6 +6,8 @@ A simple single header C/C++ Library for AABB Collision detection and resolution
 
 Modified for use in Muzzle
 
+The readme info has not been update to match the changes created :)
+
 ![](./demo.gif)
 
 ## Structs
