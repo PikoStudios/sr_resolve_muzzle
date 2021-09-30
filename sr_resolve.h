@@ -1,5 +1,6 @@
 // A simple AABB Collision resolver that will work for most games
 // Author - siddharthroy12/@siddharthroy12
+// Modified by PikoStudios for use in the Muzzle Framework
 
 #ifndef SR_RESOLVE_H
 #define SR_RESOLVE_H
