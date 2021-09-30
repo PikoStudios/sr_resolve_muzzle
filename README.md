@@ -2,6 +2,10 @@
 
 A simple single header C/C++ Library for AABB Collision detection and resolution
 
+[Un-Modified Repositiory](https://github.com/siddharthroy12/sr_resolve)
+
+Modified for use in Muzzle
+
 ![](./demo.gif)
 
 ## Structs
