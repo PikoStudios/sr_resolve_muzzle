@@ -21,6 +21,28 @@ typedef struct sr_sort_pair {
     float time;
 } sr_sort_pair;
 
+void swap_float(float *vec1, float *vec2);
+float sr_vec2_length(vec2 v);
+
+static vec2 sr_vec2_scale(vec2 v, float scale);
+static vec2 sr_vec2_divide(vec2 v1, vec2 v2);
+static vec2 sr_vec2_multiply(vec2 v1, vec2 v2);
+static vec2 sr_vec2_normalize(vec2 v);
+static vec2 sr_vector2_sub(vec2 v1, vec2 v2);
+static vec2 sr_vector2_add(vec2 v1, vec2 v2);
+
+static bool sr_check_rec_vs_rec_collision(rectangle rec1, rectangle rec2);
+static bool sr_check_ray_vs_rec_collision(const sr_ray2 ray, const rectangle target, vec2 *contact_point, vec2 *contact_normal, float *t_hit_near);
+static bool sr_dynamic_rect_vs_rect(const rectangle in, const rectangle target, vec2 vel, vec2 *contact_point, vec2 *contact_normal, float *contact_time, float delta);
+
+void sr_sort_indexes(sr_sort_pair *times, int length);
+static void sr_move_and_slide(rectangle *obstacles, const int obstacles_length, vec2 hitbox, vec2 *vel, vec2 *pos , float delta);
+
+
+
+
+#ifdef MZ_SR_RESOLVE_IMPLEMENTION
+
 void swap_float(float *vec1, float *vec2) {
   	float temp = *vec1;
   	*vec1 = *vec2;
@@ -224,4 +246,6 @@ static void sr_move_and_slide(rectangle *obstacles, const int obstacles_length, 
     	}
   	}
 }
-#endif
+
+#endif // IMPLEMENTION
+#endif // HEADER GUARD
