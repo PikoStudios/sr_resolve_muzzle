@@ -8,6 +8,16 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+typedef struct sr_ray2 {
+    vec2 position;
+    vec2 direction;
+} sr_ray2;
+
+typedef struct sr_sort_pair {
+    int index;
+    float time;
+} sr_sort_pair;
+
 #define max(x, y) (x > y ? x : y)
 #define min(x, y) (x > y ? y : x)
 
