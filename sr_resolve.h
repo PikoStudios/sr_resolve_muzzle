@@ -8,6 +8,9 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#include "core/vector.h"
+#include "shapes/Rectangle.h"
+
 typedef struct sr_ray2 {
     vec2 position;
     vec2 direction;
@@ -18,8 +21,8 @@ typedef struct sr_sort_pair {
     float time;
 } sr_sort_pair;
 
-#define max(x, y) (x > y ? x : y)
-#define min(x, y) (x > y ? y : x)
+#define MZ_COLLISION_MAX(x, y) (x > y ? x : y)
+#define MZ_COLLISION_MIN(x, y) (x > y ? y : x)
 
 void swap_float(float *vec1, float *vec2);
 float sr_vec2_length(vec2 v);
@@ -127,10 +130,10 @@ static bool sr_check_ray_vs_rec_collision(const sr_ray2 ray, const rectangle tar
 	if (t_near.x > t_far.y || t_near.y > t_far.x) return false;
 
     // Closest 'time' will be the first contact
-    *t_hit_near = max(t_near.x, t_near.y);
+    *t_hit_near = MZ_COLLISION_MAX(t_near.x, t_near.y);
 
     // Furthest 'time' is contact on opposite side of target
-    float t_hit_far = min(t_far.x, t_far.y);
+    float t_hit_far = MZ_COLLISION_MIN(t_far.x, t_far.y);
 
     // Reject if ray direction is pointing away from object
     if (t_hit_far < 0) return false;
