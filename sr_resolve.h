@@ -6,20 +6,10 @@
 #define SR_RESOLVE_H
 #include <math.h>
 #include <stdio.h>
-#include <Muzzle.h>
+#include <stdbool.h>
 
 #define max(x, y) (x > y ? x : y)
 #define min(x, y) (x > y ? y : x)
-
-typedef struct sr_ray2 {
-    vec2 position;
-    vec2 direction;
-} sr_ray2;
-
-typedef struct sr_sort_pair {
-    int index;
-    float time;
-} sr_sort_pair;
 
 void swap_float(float *vec1, float *vec2);
 float sr_vec2_length(vec2 v);
